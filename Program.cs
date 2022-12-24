@@ -1,38 +1,35 @@
 ﻿using System;
 
-namespace test
+namespace Task_2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter your range");
+            int number1 =int.Parse(Console.ReadLine());
+            int number2=int.Parse(Console.ReadLine());
 
-            int low =int.Parse(Console.ReadLine());
-               int high=int.Parse(Console.ReadLine());
-            
 
-                Console.WriteLine("print prime numper from x to y");
+            Console.WriteLine("Get all perfct numbers in the range");
 
-            while(low <= high)
+            for(int i = number1; i <= number2; i++)
             {
-                Boolean notprime=false;
-
-                for (int i = 2; i <= low / 2; i++)
+                decimal sum = 0;
+                for(int j = 1; j < i; j++)
                 {
+                    if(i%j==0)
+                        sum=sum + j;
 
-                    if (low % i == 0)
-                    {
-                        notprime = true;
-                        break;
-                    }
                 }
-                if (!notprime && low != 0 && low != 0)
-                    Console.WriteLine(low + "");
 
-                ++low;
-                
+                if (sum == i)
+                    Console.WriteLine(i);
+
             }
 
+
+            
         }
     }
 }
